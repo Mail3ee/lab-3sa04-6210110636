@@ -11,6 +11,7 @@ export default function Forecast(props) {
                     <Text style={styles.tempText}>  °C</Text>
                 </Text>
             </View>
+            <Text style={styles.country}>{props.country}</Text>
         </View>
     );
 }
@@ -35,6 +36,16 @@ const styles = StyleSheet.create({
         textShadowRadius: 5,
     },
     temp:{
+        justifyContent: 'center',
+        textAlign: 'center',
+        color: '#fff',
+        fontSize: 50,
+        fontWeight: 'bold',
+        textShadowColor: 'black',
+        textShadowRadius: 5,
+    },
+    country:{
+        top: -150,
         justifyContent: 'center',
         textAlign: 'center',
         color: '#fff',
