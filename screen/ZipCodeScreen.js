@@ -17,8 +17,8 @@ const availableZipItems = [
 const ZipItem = ({place, code, navigation}) => (
     <TouchableHighlight onPress={() => navigation.navigate('Weather', { zipCode: code})}>
          <View style={styles.zipItem}>
-            <Text>{place}</Text>
-            <Text>{code}</Text>
+            <Text style={styles.text}>{place}</Text>
+            <Text style={styles.text}>{code}</Text>
         </View>
     </TouchableHighlight>
 )
@@ -26,8 +26,9 @@ const _keyExtractor = item => item.code
 
 export default function ZipCodeScreen(){
     const navigation = useNavigation()
-    return (
-    <View>
+    return (   
+    <View> 
+        <Text style={styles.header}> Weather </Text>
         <FlatList
             data={availableZipItems}
             keyExtractor={_keyExtractor}
@@ -35,7 +36,7 @@ export default function ZipCodeScreen(){
                 <ZipItem {...item} navigation={navigation}/>
             }
         />
-         <StatusBar style="auto" />
+        <StatusBar style="auto" />
     </View>
     );
 }
@@ -44,6 +45,23 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
+        width: "auto",
+        height: 50,
+        backgroundColor : "#C5FFD2",
     },
+    text:{
+        textAlign: "center",
+        fontSize: 20,
+        color: "#BC153B",
+        padding : 10
+    },
+    header:{
+        width: "auto",
+        height: 80,
+        fontSize: 50,
+        textAlign: "center",
+        backgroundColor : "#BECAFE",
+        borderRadius : 100
+    }
 })
    
